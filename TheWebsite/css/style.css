@@ -110,3 +110,9 @@ em strong, strong em{ font-weight:bold; font-style:italic; }
 	text-align:center;
 	left:0;
 }
+#subMenusContainer li, #nav li{
+	margin-bottom:-0.99em;
+}
+#subMenusContainer li a{
+	position:relative;
+}
