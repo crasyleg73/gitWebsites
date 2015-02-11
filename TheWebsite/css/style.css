@@ -118,6 +118,11 @@ strong {
     font-weight: bold;
 }
 
+dt {
+    font-weight: bold;
+    color: #33CC33;
+}
+
 em strong,
 strong em {
     font-weight: bold;
@@ -261,19 +266,19 @@ var MenuMatic new Class( {
         );
         this.options.direction.x this.options.direction.x.toLowerCase();
         this.options.direction.y this.options.direction.y.toLowerCase();
-        if (this.options.direction.x= "right") {
+        if (this.options.direction.x "right") {
             this.options.direction.xInverse "left"
         }
         else {
-            if (this.options.direction.x= "left") {
+            if (this.options.direction.x "left") {
                 this.options.direction.xInverse "right"
             }
         }
-        if (this.options.direction.y= "up") {
+        if (this.options.direction.y "up") {
             this.options.direction.yInverse "down"
         }
         else {
-            if (this.options.direction.y= "down") {
+            if (this.options.direction.y "down") {
                 this.options.direction.yInverse "up"
             }
         }
@@ -284,12 +289,12 @@ var MenuMatic new Class( {
             F.store("parentLinks", F.retrieve("parentLinks").erase(F.retrieve("parentLinks").getFirst()));
             F.store("childMenu", F.getNext("ul") || F.getNext("ol"));
             theSubMenuType "subsequent";
-            if ($(F.getParent("ul") || F.getParent("ol")).id= this.options.id) {
+            if ($(F.getParent("ul") || F.getParent("ol")).id this.options.id) {
                 theSubMenuType "initial"
             }
             F.store("subMenuType",
             theSubMenuType);
-            if (theSubMenuType= "initial" && $(F.getNext("ul") || F.getNext("ol"))) {
+            if (theSubMenuType "initial" && $(F.getNext("ul") || F.getNext("ol"))) {
                 F.addClass("mainMenuParentBtn")
             }
             else {
@@ -378,10 +383,10 @@ var MenuMatic new Class( {
                 .bind(this),
                 keydown: function (H) {
                     var G new Event(H);
-                    if (H.key= "up" || H.key= "down" || H.key= "left" || H.key= "right") {
+                    if (H.key "up" || H.key "down" || H.key "left" || H.key "right") {
                         H.stop()
                     }
-                    if (H.key= "left" && this.options.orientation= "horizontal" || H.key= "up" && this.options.orientation= "vertical") {
+                    if (H.key "left" && this.options.orientation "horizontal" || H.key "up" && this.options.orientation "vertical") {
                         if (F.getParent("li").getPrevious("li")) {
                             F.getParent("li").getPrevious("li").getFirst("a").focus()
                         }
@@ -390,7 +395,7 @@ var MenuMatic new Class( {
                         }
                     }
                     else {
-                        if (H.key= "right" && this.options.orientation= "horizontal" || H.key= "down" && this.options.orientation= "vertical") {
+                        if (H.key "right" && this.options.orientation "horizontal" || H.key "down" && this.options.orientation "vertical") {
                             if (F.getParent("li").getNext("li")) {
                                 F.getParent("li").getNext("li").getFirst("a").focus()
                             }
@@ -434,7 +439,7 @@ var MenuMatic new Class( {
     }
     ,
     stretch: function () {
-        if (this.options.stretchMainMenu && this.options.orientation= "horizontal") {
+        if (this.options.stretchMainMenu && this.options.orientation "horizontal") {
             var C parseFloat($(this.options.id).getCoordinates().width);
             var D 0;
             var B $(this.options.id).getElements("a");
@@ -462,14 +467,14 @@ var MenuMatic new Class( {
     }
     ,
     killDivider: function () {
-        if (this.options.killDivider && this.options.killDivider.toLowerCase()= "first") {
+        if (this.options.killDivider && this.options.killDivider.toLowerCase() "first") {
             $($(this.options.id).getElements("li")[0]).setStyles( {
                 background: "none"
             }
             )
         }
         else {
-            if (this.options.killDivider && this.options.killDivider.toLowerCase()= "last") {
+            if (this.options.killDivider && this.options.killDivider.toLowerCase() "last") {
                 $($(this.options.id).getElements("li").getLast()).setStyles( {
                     background: "none"
                 }
@@ -548,8 +553,8 @@ var MenuMaticSubMenu new Class( {
             }
             )
         }
-        if (this.options.effect= "slide" || this.options.effect= "slide & fade") {
-            if (this.subMenuType "initial" && this.options.orientation= "horizontal") {
+        if (this.options.effect "slide" || this.options.effect "slide & fade") {
+            if (this.subMenuType "initial" && this.options.orientation "horizontal") {
                 this.childMenu.getFirst().setStyle("margin-top", "0")
             }
             else {
@@ -557,7 +562,7 @@ var MenuMaticSubMenu new Class( {
             }
         }
         else {
-            if (this.options.effect= "fade" || this.options.effect= "slide & fade") {
+            if (this.options.effect "fade" || this.options.effect "slide & fade") {
                 this.childMenu.getFirst().setStyle("opacity", 0)
             }
         }
@@ -597,42 +602,42 @@ var MenuMaticSubMenu new Class( {
                 .bind(this),
                 keydown: function (H) {
                     var G new Event(H);
-                    if (H.key= "up" || H.key= "down" || H.key= "left" || H.key= "right" || H.key= "tab") {
+                    if (H.key "up" || H.key "down" || H.key "left" || H.key "right" || H.key "tab") {
                         H.stop()
                     }
-                    if (H.key= "up") {
+                    if (H.key "up") {
                         if (F.getParent("li").getPrevious("li")) {
                             F.getParent("li").getPrevious("li").getFirst("a").focus()
                         }
                         else {
-                            if (this.options.direction.y= "down") {
+                            if (this.options.direction.y "down") {
                                 this.btn.focus()
                             }
                             else {
-                                if (this.options.direction.y= "up") {
+                                if (this.options.direction.y "up") {
                                     F.getParent("li").getParent().getLast("li").getFirst("a").focus()
                                 }
                             }
                         }
                     }
                     else {
-                        if (H.key= "down") {
+                        if (H.key "down") {
                             if (F.getParent("li").getNext("li")) {
                                 F.getParent("li").getNext("li").getFirst("a").focus()
                             }
                             else {
-                                if (this.options.direction.y= "down") {
+                                if (this.options.direction.y "down") {
                                     F.getParent("li").getParent().getFirst("li").getFirst("a").focus()
                                 }
                                 else {
-                                    if (this.options.direction.y= "up") {
+                                    if (this.options.direction.y "up") {
                                         this.btn.focus()
                                     }
                                 }
                             }
                         }
                         else {
-                            if (H.key= this.options.direction.xInverse) {
+                            if (H.key this.options.direction.xInverse) {
                                 this.btn.focus()
                             }
                         }
@@ -656,7 +661,7 @@ var MenuMaticSubMenu new Class( {
                 this.cancellHideAllSubMenus();
                 this.hideOtherSubMenus();
                 this.showSubMenu();
-                if (this.subMenuType= "initial" && this.options.mmbClassName && this.options.mmbFocusedClassName) {
+                if (this.subMenuType "initial" && this.options.mmbClassName && this.options.mmbFocusedClassName) {
                     $(this.btn).retrieve("btnMorph", new Fx.Morph($(this.btn), {
                         duration: (this.options.duration / 2), transition: this.options.physics, link: "cancel"
                     }
@@ -668,7 +673,7 @@ var MenuMaticSubMenu new Class( {
                 this.cancellHideAllSubMenus();
                 this.hideOtherSubMenus();
                 this.showSubMenu();
-                if (this.subMenuType= "initial" && this.options.mmbClassName && this.options.mmbFocusedClassName) {
+                if (this.subMenuType "initial" && this.options.mmbClassName && this.options.mmbFocusedClassName) {
                     $(this.btn).retrieve("btnMorph", new Fx.Morph($(this.btn), {
                         duration: (this.options.duration / 2), transition: this.options.physics, link: "cancel"
                     }
@@ -688,22 +693,22 @@ var MenuMaticSubMenu new Class( {
             .bind(this),
             keydown: function (E) {
                 E new Event(E);
-                if (E.key= "up" || E.key= "down" || E.key= "left" || E.key= "right") {
+                if (E.key "up" || E.key "down" || E.key "left" || E.key "right") {
                     E.stop()
                 }
                 if (!this.parentSubMenu) {
-                    if (this.options.orientation= "horizontal" && E.key= this.options.direction.y || this.options.orientation= "vertical" && E.key= this.options.direction.x) {
-                        if (this.options.direction.y= "down") {
+                    if (this.options.orientation "horizontal" && E.key this.options.direction.y || this.options.orientation "vertical" && E.key this.options.direction.x) {
+                        if (this.options.direction.y "down") {
                             this.childMenu.getFirst().getFirst("li").getFirst("a").focus()
                         }
                         else {
-                            if (this.options.direction.y= "up") {
+                            if (this.options.direction.y "up") {
                                 this.childMenu.getFirst().getLast("li").getFirst("a").focus()
                             }
                         }
                     }
                     else {
-                        if (this.options.orientation= "horizontal" && E.key= "left" || this.options.orientation= "vertical" && E.key= this.options.direction.yInverse) {
+                        if (this.options.orientation "horizontal" && E.key "left" || this.options.orientation "vertical" && E.key this.options.direction.yInverse) {
                             if (this.btn.getParent().getPrevious()) {
                                 this.btn.getParent().getPrevious().getFirst().focus()
                             }
@@ -712,7 +717,7 @@ var MenuMaticSubMenu new Class( {
                             }
                         }
                         else {
-                            if (this.options.orientation= "horizontal" && E.key= "right" || this.options.orientation= "vertical" && E.key= this.options.direction.y) {
+                            if (this.options.orientation "horizontal" && E.key "right" || this.options.orientation "vertical" && E.key this.options.direction.y) {
                                 if (this.btn.getParent().getNext()) {
                                     this.btn.getParent().getNext().getFirst().focus()
                                 }
@@ -724,51 +729,51 @@ var MenuMaticSubMenu new Class( {
                     }
                 }
                 else {
-                    if (E.key= "tab") {
+                    if (E.key "tab") {
                         E.stop()
                     }
-                    if (E.key= "up") {
+                    if (E.key "up") {
                         if (this.btn.getParent("li").getPrevious("li")) {
                             this.btn.getParent("li").getPrevious("li").getFirst("a").focus()
                         }
                         else {
-                            if (this.options.direction.y= "down") {
+                            if (this.options.direction.y "down") {
                                 this.parentSubMenu.btn.focus()
                             }
                             else {
-                                if (this.options.direction.y= "up") {
+                                if (this.options.direction.y "up") {
                                     this.btn.getParent("li").getParent().getLast("li").getFirst("a").focus()
                                 }
                             }
                         }
                     }
                     else {
-                        if (E.key= "down") {
+                        if (E.key "down") {
                             if (this.btn.getParent("li").getNext("li")) {
                                 this.btn.getParent("li").getNext("li").getFirst("a").focus()
                             }
                             else {
-                                if (this.options.direction.y= "down") {
+                                if (this.options.direction.y "down") {
                                     this.btn.getParent("li").getParent().getFirst("li").getFirst("a").focus()
                                 }
                                 else {
-                                    if (this.options.direction.y= "up") {
+                                    if (this.options.direction.y "up") {
                                         this.parentSubMenu.btn.focus()
                                     }
                                 }
                             }
                         }
                         else {
-                            if (E.key= this.options.direction.xInverse) {
+                            if (E.key this.options.direction.xInverse) {
                                 this.parentSubMenu.btn.focus()
                             }
                             else {
-                                if (E.key= this.options.direction.x) {
-                                    if (this.options.direction.y= "down") {
+                                if (E.key this.options.direction.x) {
+                                    if (this.options.direction.y "down") {
                                         this.chsildMenu.getFirst().getFirst("li").getFirst("a").focus()
                                     }
                                     else {
-                                        if (this.options.direction.y= "up") {}
+                                        if (this.options.direction.y "up") {}
                                     }
                                 }
                             }
@@ -783,7 +788,7 @@ var MenuMaticSubMenu new Class( {
     }
     ,
     matchWidth: function () {
-        if (this.widthMatched || !this.options.matchWidthMode || this.subMenuType= "subsequent") {
+        if (this.widthMatched || !this.options.matchWidthMode || this.subMenuType "subsequent") {
             return
         }
         this.options.onMatchWidth_begin(this);
@@ -805,7 +810,7 @@ var MenuMaticSubMenu new Class( {
     }
     ,
     hideSubMenu: function () {
-        if (this.childMenu.retrieve("status")= "closed") {
+        if (this.childMenu.retrieve("status") "closed") {
             return
         }
         this.options.onHideSubMenu_begin(this);
@@ -831,8 +836,8 @@ var MenuMaticSubMenu new Class( {
         }
         this.childMenu.setStyle("z-index",
         1);
-        if (this.options.effect && this.options.effect.toLowerCase()= "slide") {
-            if (this.subMenuType "initial" && this.options.orientation= "horizontal" && this.options.direction.y= "down") {
+        if (this.options.effect && this.options.effect.toLowerCase() "slide") {
+            if (this.subMenuType "initial" && this.options.orientation "horizontal" && this.options.direction.y "down") {
                 this.myEffect.start( {
                     "margin-top": -this.height
                 }
@@ -842,7 +847,7 @@ var MenuMaticSubMenu new Class( {
                 .bind(this))
             }
             else {
-                if (this.subMenuType "initial" && this.options.orientation= "horizontal" && this.options.direction.y= "up") {
+                if (this.subMenuType "initial" && this.options.orientation "horizontal" && this.options.direction.y "up") {
                     this.myEffect.start( {
                         "margin-top": this.height
                     }
@@ -852,7 +857,7 @@ var MenuMaticSubMenu new Class( {
                     .bind(this))
                 }
                 else {
-                    if (this.options.direction.x= "right") {
+                    if (this.options.direction.x "right") {
                         this.myEffect.start( {
                             "margin-left": -this.width
                         }
@@ -862,7 +867,7 @@ var MenuMaticSubMenu new Class( {
                         .bind(this))
                     }
                     else {
-                        if (this.options.direction.x= "left") {
+                        if (this.options.direction.x "left") {
                             this.myEffect.start( {
                                 "margin-left": this.width
                             }
@@ -887,7 +892,7 @@ var MenuMaticSubMenu new Class( {
             }
             else {
                 if (this.options.effect "slide & fade") {
-                    if (this.subMenuType "initial" && this.options.orientation= "horizontal" && this.options.direction.y= "down") {
+                    if (this.subMenuType "initial" && this.options.orientation "horizontal" && this.options.direction.y "down") {
                         this.myEffect.start( {
                             "margin-top": -this.height, opacity: 0
                         }
@@ -897,7 +902,7 @@ var MenuMaticSubMenu new Class( {
                         .bind(this))
                     }
                     else {
-                        if (this.subMenuType "initial" && this.options.orientation= "horizontal" && this.options.direction.y= "up") {
+                        if (this.subMenuType "initial" && this.options.orientation "horizontal" && this.options.direction.y "up") {
                             this.myEffect.start( {
                                 "margin-top": this.height, opacity: 0
                             }
@@ -907,7 +912,7 @@ var MenuMaticSubMenu new Class( {
                             .bind(this))
                         }
                         else {
-                            if (this.options.direction.x= "right") {
+                            if (this.options.direction.x "right") {
                                 this.myEffect.start( {
                                     "margin-left": -this.width, opacity: 0
                                 }
@@ -917,7 +922,7 @@ var MenuMaticSubMenu new Class( {
                                 .bind(this))
                             }
                             else {
-                                if (this.options.direction.x= "left") {
+                                if (this.options.direction.x "left") {
                                     this.myEffect.start( {
                                         "margin-left": this.width, opacity: 0
                                     }
@@ -969,7 +974,7 @@ var MenuMaticSubMenu new Class( {
     }
     ,
     showSubMenu: function (A) {
-        if (this.childMenu.retrieve("status")= "open") {
+        if (this.childMenu.retrieve("status") "open") {
             return
         }
         this.options.onShowSubMenu_begin(this);
@@ -990,17 +995,17 @@ var MenuMaticSubMenu new Class( {
             this.width this.childMenu.getFirst().getCoordinates().width;
             this.height this.childMenu.getFirst().getCoordinates().height;
             this.childMenu.setStyle("height", this.height, "border");
-            if (this.options.effect= "slide" || this.options.effect= "slide & fade") {
-                if (this.subMenuType "initial" && this.options.orientation= "horizontal") {
+            if (this.options.effect "slide" || this.options.effect "slide & fade") {
+                if (this.subMenuType "initial" && this.options.orientation "horizontal") {
                     this.childMenu.getFirst().setStyle("margin-top", "0");
-                    if (this.options.direction.y= "down") {
+                    if (this.options.direction.y "down") {
                         this.myEffect.set( {
                             "margin-top": -this.height
                         }
                         )
                     }
                     else {
-                        if (this.options.direction.y= "up") {
+                        if (this.options.direction.y "up") {
                             this.myEffect.set( {
                                 "margin-top": this.height
                             }
@@ -1009,7 +1014,7 @@ var MenuMaticSubMenu new Class( {
                     }
                 }
                 else {
-                    if (this.options.direction.x= "left") {
+                    if (this.options.direction.x "left") {
                         this.myEffect.set( {
                             "margin-left": this.width
                         }
@@ -1026,12 +1031,12 @@ var MenuMaticSubMenu new Class( {
         }
         this.matchWidth();
         this.positionSubMenu();
-        if (this.options.effect= "slide") {
+        if (this.options.effect "slide") {
             this.childMenu.setStyles( {
                 display: "block", visibility: "visible"
             }
             );
-            if (this.subMenuType= "initial" && this.options.orientation= "horizontal") {
+            if (this.subMenuType "initial" && this.options.orientation "horizontal") {
                 if (A) {
                     this.myEffect.set( {
                         "margin-top": 0
@@ -1073,7 +1078,7 @@ var MenuMaticSubMenu new Class( {
             }
         }
         else {
-            if (this.options.effect= "fade") {
+            if (this.options.effect "fade") {
                 if (A) {
                     this.myEffect.set( {
                         opacity: this.options.opacity
@@ -1103,7 +1108,7 @@ var MenuMaticSubMenu new Class( {
                         left: 0
                     }
                     );
-                    if (this.subMenuType= "initial" && this.options.orientation= "horizontal") {
+                    if (this.subMenuType "initial" && this.options.orientation "horizontal") {
                         if (A) {
                             this.myEffect.set( {
                                 "margin-top": 0, opacity: this.options.opacity
@@ -1125,7 +1130,7 @@ var MenuMaticSubMenu new Class( {
                     }
                     else {
                         if (A) {
-                            if (this.options.direction.x= "right") {
+                            if (this.options.direction.x "right") {
                                 this.myEffect.set( {
                                     "margin-left": 0, opacity: this.options.opacity
                                 }
@@ -1135,7 +1140,7 @@ var MenuMaticSubMenu new Class( {
                                 .bind(this))
                             }
                             else {
-                                if (this.options.direction.x= "left") {
+                                if (this.options.direction.x "left") {
                                     this.myEffect.set( {
                                         "margin-left": 0, opacity: this.options.opacity
                                     }
@@ -1147,7 +1152,7 @@ var MenuMaticSubMenu new Class( {
                             }
                         }
                         else {
-                            if (this.options.direction.x= "right") {
+                            if (this.options.direction.x "right") {
                                 this.myEffect.set( {
                                     "margin-left": -this.width, opacity: this.options.opacity
                                 }
@@ -1161,7 +1166,7 @@ var MenuMaticSubMenu new Class( {
                                 .bind(this))
                             }
                             else {
-                                if (this.options.direction.x= "left") {
+                                if (this.options.direction.x "left") {
                                     this.myEffect.start( {
                                         "margin-left": 0, opacity: this.options.opacity
                                     }
@@ -1197,9 +1202,9 @@ var MenuMaticSubMenu new Class( {
         this.options.onPositionSubMenu_begin(this);
         this.childMenu.setStyle("width", this.width);
         this.childMenu.getFirst().setStyle("width", this.width);
-        if (this.subMenuType= "subsequent") {
+        if (this.subMenuType "subsequent") {
             if (this.parentSubMenu && this.options.direction.x ! this.parentSubMenu.options.direction.x) {
-                if (this.parentSubMenu.options.direction.x= "left" && this.options.effect && this.options.effect.contains("slide")) {
+                if (this.parentSubMenu.options.direction.x "left" && this.options.effect && this.options.effect.contains("slide")) {
                     this.myEffect.set( {
                         "margin-left": this.width
                     }
@@ -1214,8 +1219,8 @@ var MenuMaticSubMenu new Class( {
         var C;
         var A;
         if (this.subMenuType "initial") {
-            if (this.options.direction.y= "up") {
-                if (this.options.orientation= "vertical") {
+            if (this.options.direction.y "up") {
+                if (this.options.orientation "vertical") {
                     C this.btn.getCoordinates().bottom - this.height + this.options.tweakInitial.y
                 }
                 else {
@@ -1254,7 +1259,7 @@ var MenuMaticSubMenu new Class( {
         }
         else {
             if (this.subMenuType "subsequent") {
-                if (this.options.direction.y= "down") {
+                if (this.options.direction.y "down") {
                     if ((this.btn.getCoordinates().top + this.options.tweakSubsequent.y + this.childMenu.getSize().y) > $(document.body).getScrollSize().y) {
                         A (this.btn.getCoordinates().top + this.options.tweakSubsequent.y + this.childMenu.getSize().y) - $(document.body).getScrollSize().y;
                         this.childMenu.style.top (this.btn.getCoordinates().top + this.options.tweakSubsequent.y) - A - 20 + "px"
@@ -1264,7 +1269,7 @@ var MenuMaticSubMenu new Class( {
                     }
                 }
                 else {
-                    if (this.options.direction.y= "up") {
+                    if (this.options.direction.y "up") {
                         if ((this.btn.getCoordinates().bottom - this.height + this.options.tweakSubsequent.y) < 1) {
                             this.options.direction.y "down";
                             this.options.direction.yInverse "up";
@@ -1281,7 +1286,7 @@ var MenuMaticSubMenu new Class( {
                         this.options.direction.x "right";
                         this.options.direction.xInverse "left";
                         this.childMenu.style.left this.btn.getPosition().x + this.btn.getCoordinates().width + this.options.tweakSubsequent.x + "px";
-                        if (this.options.effect= "slide" || this.options.effect= "slide & fade") {
+                        if (this.options.effect "slide" || this.options.effect "slide & fade") {
                             this.myEffect.set( {
                                 "margin-left": -this.width, opacity: this.options.opacity
                             }
@@ -1298,7 +1303,7 @@ var MenuMaticSubMenu new Class( {
                             this.options.direction.x "left";
                             this.options.direction.xInverse "right";
                             this.childMenu.style.left this.btn.getCoordinates().left - this.childMenu.getCoordinates().width + this.options.tweakSubsequent.x + "px";
-                            if (this.options.effect= "slide" || this.options.effect= "slide & fade") {
+                            if (this.options.effect "slide" || this.options.effect "slide & fade") {
                                 this.myEffect.set( {
                                     "margin-left": this.width, opacity: this.options.opacity
                                 }
