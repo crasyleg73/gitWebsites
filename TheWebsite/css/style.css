@@ -162,6 +162,7 @@ strong em {
     overflow: hidden;
     text-indent: 999em;
     line-height: 999em;
+    z-index: 30;
 }
 
 #content {
@@ -172,6 +173,7 @@ strong em {
     margin: 0 0 0 -282px;
     padding: 15px 0;
     top: 60px;
+    z-index: 30;
 }
 
 #footer {
