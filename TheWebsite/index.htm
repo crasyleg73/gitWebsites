@@ -10,15 +10,24 @@
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all" charset="utf-8" />
     <script src="js/jquery.js"></script>
     <script src="js/include.js"></script>
-    <!--    the problem might be right here -->
+
+    <script src="js/processing.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //convenience function
+        function getProcessingSketchId() {
+            return 'background';
+        }
+    </script>
+
+
 </head>
 
 <body>
 
     <div id="container">
         <div id="include"></div>
-        <!--    include location-->
 
+        <canvas id="background" data-processing-sources="pde/background/background.pde" width="1280" height="900"> </canvas>
         <div id="content">
             <h1>Horizontal Menu Example</h1>
             <p>My Name is Joe, I am the best coder ever!</p>

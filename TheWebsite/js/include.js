@@ -2,5 +2,5 @@
 /*global $ jQuery, alert*/
 $(function () {
     'use strict';
-    $("#include").load("/jmolter/import/include.htm");
+    $("#include").load("import/include.htm");
 });
