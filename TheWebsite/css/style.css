@@ -4,7 +4,8 @@ html {
     text-align: center;
     margin: 0 auto;
     padding: 0;
-    background: url(../img/bg.jpg) no-repeat center center #fff;
+    /* background: url(../img/bg.jpg) no-repeat center center #fff; */
+    
     overflow: scroll;
 }
 
@@ -22,20 +23,20 @@ body {
 
 canvas {
     position: absolute;
-    z-index: 10;
+    z-index: 2;
 }
 
 a:link {
-    color: #CF7F18;
+    color: #00c4a5;
 }
 
 a:visited {
-    color: #AD660C;
+    color: #00806c;
 }
 
 a:hover,
 a:focus {
-    color: #FF9814;
+    color: #00ffba;
     text-decoration: none;
 }
 
@@ -58,7 +59,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #9CA716;
+    color: #0014ff;
     margin-bottom: 0.5em;
 }
 
@@ -143,26 +144,26 @@ strong em {
     background: #fff;
     top: 50%;
     margin: -100px 0 0 0;
-    border: solid #E69623;
+    border: solid #009a12;
     border-width: 3px 0 3px 0;
     opacity: 0.90;
     -moz-opacity: 0.90;
-    filter: alpha(opacity=90);
-}
+    filter: alpha(opacity=90);}
 
 #logo {
     display: block;
     position: absolute;
     width: 186px;
     height: 32px;
-    background: url(../img/logo.gif) no-repeat 0 0;
+    /*background: url(../img/logo.gif) no-repeat 0 0; */
+    
     left: 50%;
     margin: 0 0 0 -280px;
     top: 15px;
     overflow: hidden;
     text-indent: 999em;
     line-height: 999em;
-    z-index: 30;
+    z-index: 20;
 }
 
 #content {
@@ -229,7 +230,7 @@ strong em {
 #subMenusContainer a:focus,
 #nav a.mainMenuParentBtnFocused,
 #subMenusContainer a.subMenuParentBtnFocused {
-    background-color: #F6C739;
+    background-color: #6d20ff;
     color: #FFF;
 }
 /* sub menu links on hover or focus */
@@ -240,7 +241,7 @@ strong em {
 #subMenusContainer a.subMenuParentBtnFocused,
 #nav li a:hover,
 #nav li a:focus {
-    background-color: #F6C739;
+    background-color: #a20ec6;
     color: #FFF;
 }
 /* Parent Sub Menu Links ---[javascript users only]*/
@@ -299,7 +300,7 @@ strong em {
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
     background: #fff;
-    border: 1px solid #C3D46A;
+    border: 1px solid #009be0;
     left: 0;
 }
 /* List items in main menu --[for non-javascript users this applies to submenus as well]  */
@@ -323,7 +324,7 @@ strong em {
     position: absolute;
     list-style: none;
     margin: 0 0 0 0;
-    z-index: 5;
+    z-index: 100;
     top: 15px;
     left: 50%;
     text-align: center;
