@@ -3,15 +3,21 @@
 <html>
 
 <head>
-    <base dir=".."></base>
+    <!--    <base dir="."></base>-->
     <title>ScriptCraft</title>
     <meta name="description" content="Free Web tutorials">
     <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <meta name="author" content="Hege Refsnes">
     <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" charset="utf-8" />
-    <script src="/js/jquery.js"></script>
-    <script src="/js/include.js"></script>
+    <script src="../js/jquery.js"></script>
+    <!--    <script src="../js/include.js"></script>-->
 
+    <script>
+        $(function () {
+            'use strict';
+            $("#include").load("../import/include.htm");
+        });
+    </script>
 
 </head>
 
